@@ -5,7 +5,9 @@
         <div class="article">
           <div class="list" v-for="(item,index) in list" :key="index">
             <div class="text">
-              <h4 class="title">{{item.title}}</h4>
+              <h4 class="title" @click="goDetail(item)">
+                {{item.title}}
+              </h4>
               <p class="abstract">
                 {{item.abstract}}
               </p>
@@ -107,6 +109,11 @@ export default class Home extends Vue  {
       comments:'99'
     }
   ]
+  goDetail(item){
+    this.$router.push({
+      path:"/detail"
+    })
+  }
 }
 </script>
 
@@ -126,6 +133,10 @@ export default class Home extends Vue  {
         margin-top: 8px;
         color: @m-color1;
         font-size: 18px;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
       }
       .abstract{
         margin-top: 8px;

@@ -67,7 +67,9 @@
             </div>
         </Header>
         <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
-             <router-view></router-view>
+            <keep-alive>
+               <router-view></router-view>
+            </keep-alive>
         </Content>
         <Footer>Footer</Footer>
     </Layout>
