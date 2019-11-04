@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <Layout>
-        <Header class="m-header">
+        <Header :style="{position: 'fixed', width: '100%'}" class="m-header">
            <!-- 大屏幕 -->
-            <div class="header-left lg-show">
+            <div class="header-left lg-top">
                 <div class="layout-logo">
                   <img src="./assets/logo.png">
                 </div>
@@ -27,45 +27,38 @@
                 </div>
             </div>
             <!-- 中等屏幕 -->
-            <div class="md-show md-top">
+            <div class="md-top">
                 <div class="layout-logo">
                   <img src="./assets/logo.png">
                 </div>
-                <div @click="mdMenuVisibleFn" class="md-top-but">
-                    点我
-                </div>
-                <transition name="haha">
-                  <div v-if="mdMenuVisible" class="md-show md-menu">
-                    <Menu style="width:100%;text-align:center">
-                        <MenuItem name="1">
-                            发现
-                        </MenuItem>
-                        <MenuItem name="2">
-                            关注
-                        </MenuItem>
-                      
-                        <MenuItem name="3">
-                            信息
-                        </MenuItem>
-                    </Menu>
-                  </div>
-                </transition>
+                <Dropdown>
+                    <a href="javascript:void(0)">
+                       <Icon size="25" type="ios-menu" />
+                    </a>
+                    <DropdownMenu slot="list">
+                        <DropdownItem v-for="(item,index) in menuList" :key="index">{{item.label}}</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </div>
-            
-             <!-- 中等屏幕 end -->
-           
+            <!-- 中等屏幕 end -->
+            <!-- 小屏幕 -->
+            <div class="sm-top" @click="smMenuVisible = true">
+                <Icon size="26" type="ios-menu" />
+                <Drawer title="Basic Drawer" placement="left" :closable="false" v-model="smMenuVisible">
+                    <div>
+                        <div v-for="(item,index) in menuList" :key="index">{{item.label}}</div>
+                    </div>
+                </Drawer>
+            </div>
+            <!-- 小屏幕 end -->
             <div class="layout-user">
-
               <div class="item m-avatar">
                 <Avatar size="large"  src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
               </div>
-              <Dropdown>
-                  <a href="javascript:void(0)">
-                      <Icon type="ios-arrow-down"></Icon>
-                  </a>
+              <Dropdown class="arrow-box">
+                  <Icon size="22" color="#969696" type="md-arrow-dropdown" />
                   <DropdownMenu slot="list">
-                      <DropdownItem>收藏的文章</DropdownItem>
-                      <DropdownItem>喜欢的文章</DropdownItem>
+                      <DropdownItem v-for="(item,index) in menuList" :key="index">{{item.label}}</DropdownItem>
                   </DropdownMenu>
               </Dropdown>
               <div class="item m-but">
@@ -73,15 +66,16 @@
               </div>
             </div>
         </Header>
-        <Content>Content</Content>
+        <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
+             <router-view></router-view>
+        </Content>
         <Footer>Footer</Footer>
     </Layout>
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>
 </template>
 
 <script lang="ts">
+
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from './components/HelloWorld.vue';
 
@@ -96,33 +90,59 @@ export default class App extends Vue {
   data(){
     return {
       theme1: 'light',
-      mdMenuVisible:false// 中屏幕菜单
+      smMenuVisible: false,
+      menuList:[
+          {
+            label:"发现",
+            url:"",
+            index:0,
+          },
+          {
+            label:"关注",
+            index:1,
+          },
+          {  
+            label:"信息",
+            index:2
+          }
+        ],
     }
-  }
-  private mdMenuVisibleFn(){
-    this.mdMenuVisible = !this.mdMenuVisible;
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
+@import "./assets/base.less";
+.arrow-box{
+  margin-top: 10px;
+  margin-left: 5px;
+}
 #app {
-   color:#333;
-   font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
-    -webkit-tap-highlight-color: transparent;
-  .md-show{
-    display:none;
+  color:#333;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  .ivu-layout{
+    background:#fff;
   }
-  
   .m-header{
-     position: relative;
-    background: transparent;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background: #fff;
+    border-bottom: 1px solid #f0f0f0;
   } 
+  .m-avatar{
+    color:#333
+  }
+  // pc
+  .md-top{
+    display:none;
+  }
+  .sm-top{
+     display:none;
+  }
   .layout-logo{
         height: 56px;
         img{
@@ -149,7 +169,6 @@ export default class App extends Vue {
           }
         }
     }
-   
     .header-left{
       flex: 1;
       display: flex;
@@ -166,6 +185,7 @@ export default class App extends Vue {
       margin-left: 40px;
       display: flex;
       flex-direction: row;
+     
       .m-but{
         margin-left: 20px;
         button{
@@ -184,35 +204,55 @@ export default class App extends Vue {
         }
       }
     } 
-  @media screen and (max-width: 900px) {
-    .lg-show{
+  // 平板
+  @media screen and (max-width: 992px) {
+      .lg-top{
         display: none
       }
-      .md-show {
+      .sm-top{
+        display:none;
+      }
+      .md-top{
         display: flex;
-       
-        &.md-top{
-          display: flex;
-
-          .md-top-but{
-            flex:1;
-            float: left;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            background:#eee;
-          }
-        }
-        .md-menu{
-          height: 100px;
-          width: 100%;
-          position: absolute;
-          left: 0;
-          right:0;
-          top: 65px;
+        .md-top-but{
+          flex:1;
+          float: left;
+          border: 1px solid transparent;
+          border-radius: 4px;
+          background:#eee;
         }
       }
-    
+      .md-menu{
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right:0;
+        top: 65px;
+      }
   }
+  // 手机
+   @media screen and (max-width: 576px) {
+      .lg-top{
+        display: none
+      }
+      .md-top {
+        display: none;
+      }
+      .sm-top{
+        display: block;
+        height: 100%;
+        text-align: center;
+      }
+      .layout-user{
+        display:  none;
+      }
+      .m-header{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+  }
+  
 }
   .haha-enter-active {
     height:0;
