@@ -1,10 +1,16 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Layout from '../views/Layout.vue';
 import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: Layout,
+  // },
   {
     path: '/',
     name: 'home',
@@ -16,6 +22,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
   {
+    path: '/articel',
+    name: 'articel',
+    component: () => import(/* webpackChunkName: "article" */ '../views/Articel.vue'),
+  },
+  {
     path: '/detail',
     name: 'detail',
     component: () => import(/* webpackChunkName: "detail" */ '../views/Detail.vue'),
@@ -23,7 +34,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes,
 });

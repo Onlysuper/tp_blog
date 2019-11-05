@@ -1,0 +1,221 @@
+.el-notification.left {
+  left: 200px !important;
+  width: 150px;
+}
+.button-group-box .command-but,
+.button-group-box button {
+  display: inline-block;
+  padding-right: 5px;
+}
+.button-group-box .el-button {
+  margin: 0px;
+}
+.command-but .el-dropdown-link {
+  cursor: pointer;
+  color: #1890ff;
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+}
+.link-event {
+  cursor: pointer;
+}
+.link-event .copy-container {
+    font-size: 10px;
+    position: relative;
+}
+.link-event .copy-container .copy-box {
+      background: red;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+}
+.unlink-event {
+  cursor: not-allowed;
+}
+.tablelist-box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: auto;
+  overflow-y: auto;
+  height: 100%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  width: 100%;
+}
+.tablelist-box .el-pagination {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    height: 30px;
+    text-align: right;
+}
+.tablelist-box .scroll-view {
+    /* -- Attention: This line is extremely important in chrome 55+! -- */
+    -ms-touch-action: none;
+        touch-action: none;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+}
+.tablelist-box .el-table__fixed-right-patch {
+    background: #f0f0f0;
+}
+.tablelist-box .tableHeader {
+    background: #f0f0f0;
+}
+.tablelist-box .tableHeader th {
+      background: none;
+      padding: 2px 0;
+      color: #000;
+      color: rgba(0, 0, 0, 0.85);
+}
+.tablelist-box .el-table {
+    color: #000;
+}
+.tablelist-box .el-table td {
+      padding: 7px 0;
+}
+.tablelist-box .el-table .cell {
+      line-height: 30px;
+}
+.tablelist-box .el-popover p {
+    padding: 0px !important;
+    margin: 0;
+}
+.tablelist-box .link-text {
+    color: #000;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    width: 100%;
+    position: relative;
+    cursor: Default;
+}
+.tablelist-box .link-text .hoverbox {
+      display: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #000;
+      position: absolute;
+      right: -5px;
+      padding-right: 8px;
+      font-weight: bold;
+}
+.tablelist-box .link-text .hoverbox i {
+        margin-left: 5px;
+        color: #409eff;
+}
+.tablelist-box .link-text:hover .hoverbox {
+      background: rgba(255, 255, 255, 0.9);
+      display: inline;
+}
+.tablelist-box .inline-text {
+    position: relative;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    height: 30px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.tablelist-box .inline-text .copy-icon {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      cursor: pointer;
+      display: none;
+      color: rgba(0, 193, 223, 0.8);
+}
+.tablelist-box .inline-text:hover .copy-icon {
+      display: inline;
+}
+.tablelist-box .scorllTable .el-table__fixed-right {
+    right: 10px !important;
+}
+.tablelist-box .tableHeader th {
+  position: relative;
+}
+.tablelist-box .el-table td {
+  position: relative;
+}
+@media only screen and (min-device-height: 600px) {
+.tablelist-box .tableHeader th {
+    padding: 2px 0;
+}
+.tablelist-box .el-table td {
+    padding: 3px 0 !important;
+}
+}
+@media only screen and (min-device-height: 700px) {
+.tablelist-box .tableHeader th {
+    padding: 3px 0;
+}
+.tablelist-box .el-table td {
+    padding: 4px 0 !important;
+}
+}
+@media only screen and (min-device-height: 768px) {
+.tablelist-box .tableHeader th {
+    padding: 3px 0;
+}
+.tablelist-box .el-table td {
+    padding: 4px 0 !important;
+}
+}
+@media only screen and (min-device-height: 820px) {
+.tablelist-box .tableHeader th {
+    padding: 5px 0;
+}
+.tablelist-box .el-table td {
+    padding: 7px 0 !important;
+}
+}
+@media only screen and (min-device-height: 900px) {
+.tablelist-box .tableHeader th {
+    padding: 6px 0;
+}
+.tablelist-box .el-table td {
+    padding: 8px 0 !important;
+}
+}
+@media only screen and (min-device-height: 1000px) {
+.tablelist-box .tableHeader th {
+    padding: 7px 0;
+}
+.tablelist-box .el-table td {
+    padding: 10px 0 !important;
+}
+}
+@media only screen and (min-device-height: 1200px) {
+.tablelist-box .tableHeader th {
+    padding: 10px 0;
+}
+.tablelist-box .el-table td {
+    padding: 12px 0 !important;
+}
+}
+.el-table__empty-block {
+  width: 100% !important;
+}
+

@@ -8,16 +8,9 @@
                   <img src="./assets/logo.png">
                 </div>
                 <div class="layout-nav">
-                  <Menu class="m-menu" mode="horizontal" :theme="theme1" active-name="1">
-                      <MenuItem name="1">
-                          发现
-                      </MenuItem>
-                      <MenuItem name="2">
-                          关注
-                      </MenuItem>
-                    
-                      <MenuItem name="3">
-                          信息
+                  <Menu class="m-menu" mode="horizontal" :theme="theme1" :active-name="menuList[0].path" @on-select="menuSelect">
+                      <MenuItem v-for="(item,index) in menuList" :key="index" :name="item.path">
+                          {{item.label}}
                       </MenuItem>
                   </Menu>
                   
@@ -96,19 +89,26 @@ export default class App extends Vue {
       menuList:[
           {
             label:"发现",
-            url:"",
-            index:0,
+            path:"/detail",
+            index:'detail',
           },
           {
             label:"关注",
-            index:1,
+             path:"/about",
+            index:'list',
           },
           {  
             label:"信息",
-            index:2
+             path:"/articel",
+            index:'articel'
           }
         ],
     }
+  }
+  menuSelect(item){
+   this.$router.push({
+     path:item
+   })
   }
 }
 </script>
