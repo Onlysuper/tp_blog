@@ -55,7 +55,7 @@
                   </DropdownMenu>
               </Dropdown>
               <div class="item m-but">
-                <button >写文章</button>
+                <button @click="goWrite">写文章</button>
               </div>
             </div>
         </Header>
@@ -72,21 +72,18 @@
 <script lang="ts">
 
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
 
 
 @Component({
-  components: {
-    HelloWorld,
-  },
 })
 
 export default class App extends Vue {
-  data(){
-    return {
-      theme1: 'light',
-      smMenuVisible: false,
-      menuList:[
+  // data(){
+  //   return {
+    private  theme1:string= 'light';
+    private  smMenuVisible:boolean= false;
+    private  menuList:Array<any>=[
           {
             label:"发现",
             path:"/detail",
@@ -102,13 +99,19 @@ export default class App extends Vue {
              path:"/articel",
             index:'articel'
           }
-        ],
-    }
-  }
-  menuSelect(item){
+        ]
+    // }
+  // }
+  private menuSelect(item:any){
    this.$router.push({
      path:item
    })
+  }
+  // 
+  private goWrite(){
+    this.$router.push({
+      path:'write'
+    })
   }
 }
 </script>

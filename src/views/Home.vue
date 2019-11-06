@@ -3,7 +3,7 @@
     <div class="main-container">
       <div class="left-container">
         <div class="article">
-          <div class="list" v-for="(item,index) in list" :key="index">
+          <div class="list" v-for="(item,index) in articelList" :key="index">
             <div class="text">
               <h4 class="title" @click="goDetail(item)">
                 {{item.title}}
@@ -33,72 +33,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Provide } from 'vue-property-decorator';
+@Component({
+  components: {}
+})
 export default class Home extends Vue  {
-  list:Array = [
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
-    {
-      title:"《心灵捕手》教育启示录",
-      abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
-      img:"https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
-      writer:"一切来得及",
-      subscribe:'100',
-      readers:'99',
-      comments:'99'
-    },
+ articelList : Array<object> = [
     {
       title:"《心灵捕手》教育启示录",
       abstract:" 1 10月15日，一个满载着39人的集装箱被送离了爱尔兰。 集装箱里面有尚未成年的男孩，有风华正茂的少女，还有已为人父的中年男子...... 他...",
@@ -109,7 +49,7 @@ export default class Home extends Vue  {
       comments:'99'
     }
   ]
-  goDetail(item){
+  goDetail(item:any){
     this.$router.push({
       path:"/detail"
     })
@@ -122,7 +62,7 @@ export default class Home extends Vue  {
 .article{
   line-height: 1;
   .list{
-    display: flex;
+    display: flex; 
     flex-direction: row;
     border-bottom: 1px solid #f0f0f0;
     padding-top: 15px;

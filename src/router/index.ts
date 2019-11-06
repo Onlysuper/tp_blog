@@ -1,16 +1,11 @@
+// @ts-ignore
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Layout from '../views/Layout.vue';
 import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: Layout,
-  // },
   {
     path: '/',
     name: 'home',
@@ -31,6 +26,12 @@ const routes = [
     name: 'detail',
     component: () => import(/* webpackChunkName: "detail" */ '../views/Detail.vue'),
   },
+  // 管理员
+  {
+    path: '/write',
+    name: 'write',
+    component: () => import(/* webpackChunkName: "write" */ '../views/Admin/Write.vue'),
+  }
 ];
 
 const router = new VueRouter({
