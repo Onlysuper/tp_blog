@@ -7,10 +7,11 @@
         </div>
         <div class="articel-comment">
             <div class="comment-header">
+              <!-- <div class="split-line"></div> -->
               <div class="label">全部评论</div>
               <div class="order">
                 <span>按时间倒叙</span>
-                <span>按时间正序</span>
+                <span class="actived">按时间正序</span>
               </div>
             </div>
             <div class="comment-list">
@@ -18,9 +19,9 @@
                   <div>
                     <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
                   </div>
-                  <div class="name">
-                    <div>派大C</div>
-                    <div>4楼 10.30 14:48</div>
+                  <div class="text-box">
+                    <div class="nickname">派大C</div>
+                    <div class="time">4楼 10.30 14:48</div>
                   </div>
                 </div>
                 <div class="comment-content">学习了</div>
@@ -57,9 +58,31 @@
 @import "../assets/base.less";
 .articel-comment{
   .comment-header{
+    margin-top: .3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: .32rem;
+    width:100%;
+    position: relative;
+    border-left: 4px solid #ec7259;
+    align-items: center;
+    .label{
+      font-weight: bold;
+      text-indent: .2rem;
+    }
+    .order{
+      font-size: .26rem;
+      span{
+        display: inline-block;
+        padding-right: .2rem;
+        color:#969696;
+        cursor: pointer;
+        &.actived{
+          color:#2d2d2d;
+        }
+      }
+    }
   }
   .comment-list{
     margin-top: 20px;
@@ -67,8 +90,19 @@
   .commentator{
     display: flex;
     flex-direction: row;
+    .text-box{
+      margin-left: .2rem;
+    }
     .name{
-      margin-left: 20px;
+      margin-left: .2rem;
+    }
+    .nickname{
+      font-weight: bold;
+      font-size: .3rem;
+    }
+    .time{
+      color: #969696;
+      font-size: .2rem
     }
   }
   .comment-content{
@@ -83,6 +117,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
   }
+  
 }
 </style>>
