@@ -6,7 +6,7 @@
            <headerMd :menuList="menuList" @menuSelect="menuSelect"></headerMd>
            <headerSm :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerSm>
         </Header>
-        <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
+        <Content :style="{margin: '88px 20px 0', minHeight: '500px'}">
             <keep-alive>
                <router-view></router-view>
             </keep-alive>
@@ -208,170 +208,20 @@ export default class App extends Vue {
       flex-direction: row;
       margin: 0 auto;
       .left-container{
-          width: 60%;
+        flex: 2;
+        background: #fff;
+        padding: .2rem;
       }
       .right-container{
-          width: 40%;
-          padding-left: 20px;
-          box-sizing: border-box;
+        flex:1;
+        padding-left: .2rem;
+        box-sizing: border-box;
+        margin-left: .2rem;
+        padding: .2rem;
+        background: #fff;
       }
   }
 
 
-// @import "./assets/base.less";
-// .arrow-box{
-//   margin-top: 10px;
-//   margin-left: 5px;
-// }
-// #app {
-//   width:100%;
-//   color:#404040;
-//   font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
-//   -webkit-tap-highlight-color: transparent;
-//   .ivu-layout{
-//     background:#fff;
-//   }
-//   .Layout-Header{
-//     position: relative;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     background: #fff;
-//     border-bottom: 1px solid #f0f0f0;
-//   } 
-//   .m-avatar{
-//     color:#333
-//   }
-//   // pc
-//   .md-top{
-//     display:none;
-//   }
-//   .sm-top{
-//      display:none;
-//   }
-//   .layout-logo{
-//         height: 56px;
-//         img{
-//           height: 100%;
-//         }
-//     }
-//     .layout-nav{
-//       font-weight: 8;
-//       .m-menu{
-//           background: transparent;
-//            .ivu-menu-item:not(.ivu-menu-item-active){
-//             color:#333;
-//            }
-//           .ivu-menu-item,.ivu-menu-item-active{
-//             font-size: 18px;
-//             border:0;
-           
-//             &:hover{
-//               border:inherit
-//             }
-//           } 
-//           &::after{
-//             display: none;
-//           }
-//         }
-//     }
-//     .header-left{
-//       flex: 1;
-//       display: flex;
-//       flex-direction: row;
-//       justify-content: start;
-//       height: 100%;
-//     }
-//     .layout-search{
-//       flex: 1;
-//       max-width: 200px;
-//       margin-left: 20px;
-//     }
-//     .layout-user{
-//       margin-left: 40px;
-//       display: flex;
-//       flex-direction: row;
-     
-//       .m-but{
-//         margin-left: 20px;
-//         button{
-//           width: 100px;
-//           height: 40px;
-//           line-height: 24px;
-//           margin: 8px 12px 0;
-//           border-radius: 20px;
-//           font-size: 15px;
-//           color: #fff;
-//           background-color: #ea6f5a;
-//           box-shadow: none;
-//           border: 0;
-//           outline: 0;
-//           cursor: pointer;
-//         }
-//       }
-//     } 
-//   // 平板
-//   @media screen and (max-width: 992px) {
-//       .lg-top{
-//         display: none
-//       }
-//       .sm-top{
-//         display:none;
-//       }
-//       .md-top{
-//         display: flex;
-//         .md-top-but{
-//           flex:1;
-//           float: left;
-//           border: 1px solid transparent;
-//           border-radius: 4px;
-//           background:#eee;
-//         }
-//       }
-//       .md-menu{
-//         height: 100px;
-//         width: 100%;
-//         position: absolute;
-//         left: 0;
-//         right:0;
-//         top: 65px;
-//       }
-//   }
-//   // 手机
-//    @media screen and (max-width: 576px) {
-//       .lg-top{
-//         display: none
-//       }
-//       .md-top {
-//         display: none;
-//       }
-//       .sm-top{
-//         display: block;
-//         height: 100%;
-//         text-align: center;
-//       }
-//       .layout-user{
-//         display:  none;
-//       }
-//       .m-header{
-//         padding-left: 15px;
-//         padding-right: 15px;
-//       }
-//   }
-  
-// }
-//   .haha-enter-active {
-//     height:0;
-//   }
-//   .haha-appear-to /* .fade-leave-active below version 2.1.8 */ {
-//     height: auto;
-//   }
 
-//  .haha-leave-active {
-//    height:auto;
-//   }
-//   .haha-leave-to /* .fade-leave-active below version 2.1.8 */ {
-//     height:0;
-//   }
 </style>

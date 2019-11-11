@@ -1,3 +1,6 @@
+body {
+  color: #404040;
+}
 @media screen and (max-width: 576px) {
   .sm-block {
     display: flex !important;

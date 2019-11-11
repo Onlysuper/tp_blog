@@ -26,6 +26,17 @@
       </div>
       <div class="right-container">
         <!-- 待开发 -->
+        <div class="m-recommend">
+           <div class="m-title">
+             推荐阅读
+           </div>
+           <ul>
+             <li v-for="(item,index) in recommendList" :key="index">
+               <p>{{item.title}}</p>
+               <p class="nums">阅读<span> {{item.readers}}</span></p>
+             </li>
+           </ul>
+        </div>
       </div>
     </div>
     <BackTop></BackTop>
@@ -49,6 +60,14 @@ export default class Home extends Vue  {
       comments:'99'
     }
   ]
+
+   recommendList : Array<object> = [
+    {
+      title:"《心灵捕手》教育启示录",
+      readers:'99',
+    }
+  ]
+  
   goDetail(item:any){
     this.$router.push({
       path:"/detail"
@@ -105,6 +124,34 @@ export default class Home extends Vue  {
         height: 100%;
         object-fit: contain;
         object-position: center;
+      }
+    }
+  }
+}
+.m-title{
+  border-left: .1rem solid @m-primary;
+  // color:@m-color-title1;
+  font-weight: bold;
+  font-size: .3rem;
+  padding-left: .2rem;
+  line-height: 1;
+  margin-top: .2rem;
+}
+.m-recommend{
+  ul{
+    list-style: none;
+    li{
+      list-style: none;
+      margin-top: .2rem;
+      p{
+        font-size: .26rem;
+        // color: #404040;
+        &.nums{
+          font-size: .22rem;
+          color: @m-color2;
+          margin-top: .1rem;
+          line-height: 1;
+        }
       }
     }
   }
