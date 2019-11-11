@@ -102,10 +102,22 @@ display: none;
         }
       }
     } 
+
+    .m-menu{
+        background: transparent;
+        .ivu-menu-item:not(.ivu-menu-item-active){
+            color:#333;
+        }
+        .ivu-menu-item,.ivu-menu-item-active{
+            font-size: 18px;
+            border:0;
+        &:hover{
+            border:inherit
+        }
+        } 
+        &::after{
+            display: none;
+        }
+    }
 } 
-//   @media screen and (min-width: 992px) {
-//       .lg-header{
-//           display: flex;
-//       }
-//   }
 </style>>

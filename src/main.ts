@@ -6,8 +6,8 @@ import store from './store';
 
 // import style
 import 'view-design/dist/styles/iview.css';
-import '../my-theme/index.less';
-
+// import '../my-theme/index.less';
+import '../my-theme/dist/iview.css';
 
 Vue.config.productionTip = false;
 Vue.use(ViewUI);

@@ -37,9 +37,9 @@ export default class App extends Vue {
     private  theme:string= 'light';
     private  menuList:Array<any>=[
           {
-            label:"发现",
-            path:"/detail",
-            index:'detail',
+            label:"首页",
+            path:"/",
+            index:'/',
           },
           {
             label:"关注",
