@@ -1,17 +1,15 @@
-.m-header {
-  background: #fff;
-  z-index: 10;
+@media screen and (max-width: 576px) {
+  .sm-block {
+    display: flex !important;
+  }
 }
-.main-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .md-block {
+    display: flex !important;
+  }
 }
-.main-container .left-container {
-  width: 60%;
-}
-.main-container .right-container {
-  width: 40%;
-  padding-left: 20px;
-  box-sizing: border-box;
+@media screen and (min-width: 992px) {
+  .lg-block {
+    display: flex !important;
+  }
 }

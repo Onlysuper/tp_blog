@@ -15,37 +15,27 @@
               </div>
             </div>
             <div class="comment-list">
-                <div class="commentator">
-                  <div>
-                    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+                    <div class="list-item">
+                      <div class="commentator">
+                        <div>
+                          <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+                        </div>
+                        <div class="text-box">
+                          <div class="nickname">派大C</div>
+                          <div class="time">4楼 10.30 14:48</div>
+                        </div>
+                      </div>
+                      <div class="comment-content">学习了</div>
+                      <div class="comment-opera">
+                          <div class="item">
+                            <span><Icon type="ios-thumbs-up" />赞</span>
+                            <span><Icon type="ios-text" />回复</span>
+                          </div>
+                          <!-- <div class="item">
+                            <span>举报</span>
+                          </div> -->
+                      </div>  
                   </div>
-                  <div class="text-box">
-                    <div class="nickname">派大C</div>
-                    <div class="time">4楼 10.30 14:48</div>
-                  </div>
-                </div>
-                <div class="comment-content">学习了</div>
-                <div class="comment-opera">
-                    <div class="l">
-                      <span>赞</span>
-                      <span>回复</span>
-                    </div>
-                    <div class="r">
-                      <span>举报</span>
-                    </div>
-                </div>  
-                <!-- <div class="comment-respon"> -->
-                  <div class="comment-respon"><Input type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="写下你的评论..."></Input></div>
-                  <div class="comment-submit">
-                    <div class="left">
-                      <span><Icon type="ios-happy-outline" /></span>
-                    </div>
-                    <div class="right">
-                      <button>发布</button>
-                      <button>取消</button>
-                    </div>
-                  </div>
-                <!-- </div> -->
             </div>
         </div>
       </div>
@@ -85,7 +75,10 @@
     }
   }
   .comment-list{
-    margin-top: 20px;
+    margin-top: .2rem;
+    .list-item{
+      padding-bottom: .2rem;
+    }
   }
   .commentator{
     display: flex;
@@ -112,6 +105,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: .1rem;
+    .item{
+      color: #b0b0b0;
+      font-size: .26rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      span{
+        padding-right:.2rem;
+      }
+    }
   }
   .comment-submit{
     display: flex;
