@@ -22,18 +22,20 @@
         </div>
     </div>
     
-    <div class="preference">
-            <a href="javascript:void(0)">
+    <div ref="preference" class="preference">
+            <a @click="lightDarkChange" href="javascript:void(0)">
                 <Icon type="ios-sunny" />
-                <Switch v-model="switch1"/>
             </a>
+            <!-- <switchLightDark :open="lightDarkDialog"></switchLightDark> -->
+            <switchLightDark v-model="lightDarkDialog"></switchLightDark>
             <!-- <div class="preference-modal">
-                    <span>夜间模式</span>
-                     <Switch true-color="#13ce66" false-color="#ff4949" />
-                     <Switch>
-                        <span slot="close">关</span>
-                        <span slot="open">开</span>
-                    </Switch>
+                   <div class="row">
+                        <span>夜间模式</span>
+                        <i-switch>
+                            <span slot="open">开</span>
+                            <span slot="close">关</span>
+                        </i-switch>
+                   </div>
             </div> -->
     </div>
     <div class="layout-user">
@@ -53,26 +55,45 @@
 </div>
 </template>
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator';
-@Component
+import { Component, Vue, Prop,Emit } from 'vue-property-decorator';
+import switchLightDark from "@src/components/switchLightDark/index.vue";
+@Component({
+    components:{
+        switchLightDark
+    }
+})
 export default class headerLg extends Vue {
     @Prop({
         type:Array,
         default:[]
     })
     public menuList!:[];
-    // @Prop({default:[]})
-    // menuList: Array
-
     @Prop({default:'light'})
     theme: any
 
-    private switch1:Boolean=true
-    private menuSelect(item:string){
-        this.$emit("menuSelect",item)
+    lightDarkDialog = false; // 皮肤选择模块
+    switch1:Boolean=true
+
+    @Emit('menuSelect')
+    menuSelect(item:any) {
+        return item
     }
-    private goWrite(item:string){
-        this.$emit("menuSelect",item)
+    @Emit('menuSelect')
+    goWrite(item:any) {
+        return item
+    }
+    lightDarkChange(){
+        this.lightDarkDialog = !this.lightDarkDialog;
+    }
+    lightDarkConfig(){
+        document.addEventListener('click',(e)=>{
+            if(!this.$refs.preference.contains(e.target)){
+                this.lightDarkDialog = false;
+            }
+         })
+    }
+    created(){ 
+        this.lightDarkConfig();
     }
 }
 </script>
@@ -201,11 +222,37 @@ display: none;
         color: #969696;
     }
     .preference-modal{
+        box-sizing: border-box;
         position: absolute;
-        right:0;
+        right:-.5rem;
         top: 1rem;
         background: $back-light1;
-        width: 3rem;
+        min-width: 4rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+        -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,.1));
+        z-index: 999;
+        padding: .2rem;
+        border-radius:.04rem;
+        .row{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: .3rem;
+        }
+        &::before,&::after{
+            position: absolute;
+            top: -10px;
+            left: 78%;
+            content: "";
+            display: inline-block;
+            border: 9px solid transparent;
+            border-top: none;
+        }
+        &::after{
+            top: -9px;
+            border-bottom: 9px solid #fff;
+        }
     }
 }
 </style>

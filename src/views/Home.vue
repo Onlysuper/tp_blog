@@ -7,6 +7,7 @@
             <div class="article">
               <div class="list" v-for="(item,index) in articelList" :key="index">
                 <div class="text">
+                 
                   <h4 class="title" @click="goDetail(item)">
                     {{item.title}}
                   </h4>
