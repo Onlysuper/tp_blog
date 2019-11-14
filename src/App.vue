@@ -191,7 +191,7 @@ export default class App extends Vue {
 </script>
 
 
-<style lang="less">
+<style lang="scss">
   .Layout-Header{
     position: relative;
     display: flex;
@@ -221,7 +221,4 @@ export default class App extends Vue {
         background: #fff;
       }
   }
-
-
-
 </style>

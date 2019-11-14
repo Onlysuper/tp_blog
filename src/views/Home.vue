@@ -1,49 +1,65 @@
 <template>
   <div class="home">
     <div class="main-container">
-      <div class="left-container">
-        <div class="article">
-          <div class="list" v-for="(item,index) in articelList" :key="index">
-            <div class="text">
-              <h4 class="title" @click="goDetail(item)">
-                {{item.title}}
-              </h4>
-              <p class="abstract">
-                {{item.abstract}}
-              </p>
-              <ul class="meta">
-                <li> {{item.writer}}</li>
-                <li> {{item.subscribe}}</li>
-                <li>{{item.readers}}</li>
-                <li>{{item.comments}}</li>
-              </ul>
-            </div>
-            <div class="pic">
-              <img class="img-blur-done" src="https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240" alt="120">
+      <Row style="100%;margin:0 auto">
+        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 12, offset: 0 }">
+         <div class="left-container">
+            <div class="article">
+              <div class="list" v-for="(item,index) in articelList" :key="index">
+                <div class="text">
+                  <h4 class="title" @click="goDetail(item)">
+                    {{item.title}}
+                  </h4>
+                  <p class="abstract">
+                    {{item.abstract}}
+                  </p>
+                  <ul class="meta">
+                    <li> {{item.writer}}</li>
+                    <li> {{item.subscribe}}</li>
+                    <li>{{item.readers}}</li>
+                    <li>{{item.comments}}</li>
+                  </ul>
+                </div>
+                <div class="pic">
+                  <img class="img-blur-done" src="https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240" alt="120">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="right-container">
-        <!-- 待开发 -->
-        <div class="m-recommend">
-           <div class="m-title">
-             推荐阅读
-           </div>
-           <ul>
-             <li v-for="(item,index) in recommendList" :key="index">
-               <p>{{item.title}}</p>
-               <p class="nums">阅读<span> {{item.readers}}</span></p>
-             </li>
-           </ul>
-        </div>
-      </div>
+        </Col>
+        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 12, offset: 0}">
+         <div class="right-container">
+            <!-- 待开发 -->
+            <div class="m-recommend">
+              <div class="m-title">
+                推荐阅读
+              </div>
+              <ul>
+                <li v-for="(item,index) in recommendList" :key="index">
+                  <p>{{item.title}}</p>
+                  <p class="nums">阅读<span> {{item.readers}}</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Col>
+        </Row>
+     
+     
     </div>
     <BackTop></BackTop>
   </div>
 </template>
 
 <script lang="ts">
+import apis from "@src/apis/index.ts";
+var aa = apis.getAricels({
+  name:"123"
+}).then(res=>{
+  console.log('res',res)
+}).catch(err=>{
+   console.log('err',err)
+})
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
   components: {}
@@ -76,8 +92,7 @@ export default class Home extends Vue  {
 }
 </script>
 
-<style lang="less" scoped>
-@import "../assets/base.less";
+<style lang="scss" scoped>
 .article{
   line-height: 1;
   .list{
@@ -90,7 +105,7 @@ export default class Home extends Vue  {
       flex:1;
       .title{
         margin-top: 8px;
-        color: @m-color1;
+        color: $m-color1;
         font-size: 18px;
         &:hover{
           cursor: pointer;
@@ -99,7 +114,7 @@ export default class Home extends Vue  {
       }
       .abstract{
         margin-top: 8px;
-        color: @m-color2;
+        color: $m-color1;
         font-size: 14px;
         line-height: 1.5;
       }
@@ -108,7 +123,7 @@ export default class Home extends Vue  {
         display: flex;
         flex-direction: row;
         list-style: none;
-        color: @m-color2;
+        color: $m-color1;
         font-size: 12px;
         li{
            list-style: none;
@@ -129,8 +144,7 @@ export default class Home extends Vue  {
   }
 }
 .m-title{
-  border-left: .1rem solid @m-primary;
-  // color:@m-color-title1;
+  border-left: .1rem solid $m-color1;
   font-weight: bold;
   font-size: .3rem;
   padding-left: .2rem;
@@ -145,10 +159,9 @@ export default class Home extends Vue  {
       margin-top: .2rem;
       p{
         font-size: .26rem;
-        // color: #404040;
         &.nums{
           font-size: .22rem;
-          color: @m-color2;
+          color: $m-color1;
           margin-top: .1rem;
           line-height: 1;
         }

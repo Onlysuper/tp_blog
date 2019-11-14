@@ -20,15 +20,18 @@
 import { Component, Vue,Prop } from 'vue-property-decorator';
 @Component
 export default class headerLg extends Vue {
-    @Prop({default:[]})
-    menuList: Array
+    @Prop({
+        type: Array,
+        default: []
+    })
+    public menuList!: []
 
     private menuSelect(item:any){
         this.$emit("menuSelect",item)
     }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .md-header{
     position: relative;
     display: flex;
@@ -57,11 +60,5 @@ export default class headerLg extends Vue {
         }
     }
 }
-
-//   @media screen and (min-width: 576px) and(max-width: 992px){
-//       .md-header{
-//           display: flex;
-//       }
-//   }
       
 </style>

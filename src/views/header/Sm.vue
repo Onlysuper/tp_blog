@@ -14,14 +14,21 @@
     </div>
 </template>
 <script lang="ts">
-import { Component, Vue,Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class headerLg extends Vue {
-    @Prop({default:[]})
-    menuList: Array
+    // @Prop({default:[]})
+    // menuList: Array
+    @Prop({
+        type:Array,
+        default:[]
+    })
+    public menuList!:[]
 
-    @Prop({default:'light'})
-    theme: String
+    @Prop(String) 
+    public theme!: string
+    // @Prop({default:'light'})
+    // theme: String
 
     private  smMenuVisible:boolean= false;
     private menuSelect(item:any){
@@ -29,7 +36,7 @@ export default class headerLg extends Vue {
     }
 }
 </script>
-<style lang="less">
+<style lang="scss" scoped>
 .sm-header{
     position: relative;
     flex-direction: row;
@@ -45,10 +52,4 @@ export default class headerLg extends Vue {
         text-align: center;
     }
 }
-
-// @media screen and (max-width: 576px) {
-//     .sm-header{
-//         display: flex !important;
-//     }
-// }
 </style>

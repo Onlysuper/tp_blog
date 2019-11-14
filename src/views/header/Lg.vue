@@ -13,8 +13,28 @@
             </Menu>
         </div>
         <div class="layout-search">
-            <Input search placeholder="搜索" />
+            <form class="search-form">
+                <input type="text" name="" id="" autocomplete="off" placeholder="搜索" class="search-input">
+                <a class="search-btn" href="javascript:void(null)">
+                    <Icon type="ios-search" />
+                </a>
+            </form>
         </div>
+    </div>
+    
+    <div class="preference">
+            <a href="javascript:void(0)">
+                <Icon type="ios-sunny" />
+                <Switch v-model="switch1"/>
+            </a>
+            <!-- <div class="preference-modal">
+                    <span>夜间模式</span>
+                     <Switch true-color="#13ce66" false-color="#ff4949" />
+                     <Switch>
+                        <span slot="close">关</span>
+                        <span slot="open">开</span>
+                    </Switch>
+            </div> -->
     </div>
     <div class="layout-user">
         <div class="item m-avatar">
@@ -33,24 +53,30 @@
 </div>
 </template>
 <script lang="ts">
-import { Component, Vue,Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class headerLg extends Vue {
-    @Prop({default:[]})
-    menuList: Array
+    @Prop({
+        type:Array,
+        default:[]
+    })
+    public menuList!:[];
+    // @Prop({default:[]})
+    // menuList: Array
 
     @Prop({default:'light'})
-    theme: String
+    theme: any
 
-    private menuSelect(item:any){
+    private switch1:Boolean=true
+    private menuSelect(item:string){
         this.$emit("menuSelect",item)
     }
-    private goWrite(item:any){
+    private goWrite(item:string){
         this.$emit("menuSelect",item)
     }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .lg-header{
 width: 100%;
 position: relative;
@@ -74,11 +100,7 @@ display: none;
       justify-content: start;
       height: 100%;
     }
-    .layout-search{
-      flex: 1;
-      max-width: 200px;
-      margin-left: 20px;
-    }
+   
     .layout-user{
       margin-left: 40px;
       display: flex;
@@ -120,4 +142,70 @@ display: none;
         }
     }
 } 
-</style>>
+.search-form{
+    position: relative;
+    // display: flex;
+    overflow: hidden;
+    input{
+        height: .8rem;
+        font-size: .26rem;
+        border: 1px solid #eee;
+        border-radius: .4rem;
+        background: #eee;
+        transition: width .5s;
+        padding-left: .2rem;
+        border: 0;
+        outline: 0;
+        width: 4rem;
+        &::placeholder{
+            // font-weight: bold;
+        }
+        &:focus{
+            border:0;
+            outline: 0;
+            width: 5rem;
+            &+a{
+                background: #888;
+                color: #fff !important;
+            }
+        }
+    }
+    a.search-btn{
+       color: #969696!important;
+       font-size: .3rem;
+       position:absolute;
+       right: 0;
+       top: 50%;
+       height: .6rem;
+       width: .6rem;
+    //    margin-top: -.25rem;
+       transform: translateY(-55%);
+       right: .1rem;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 100%;
+    }
+}
+.preference{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    a{
+        @extend .preference;
+        flex: 1;
+    }
+    i{
+        font-size: .8rem;
+        color: #969696;
+    }
+    .preference-modal{
+        position: absolute;
+        right:0;
+        top: 1rem;
+        background: $back-light1;
+        width: 3rem;
+    }
+}
+</style>

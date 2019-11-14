@@ -44,8 +44,8 @@
       </div>
   </div>
 </template>
-<style lang="less" scoped>
-@import "../assets/base.less";
+<style lang="scss" scoped>
+// @import "../assets/base.less";
 .articel-comment{
   .comment-header{
     margin-top: .3rem;
