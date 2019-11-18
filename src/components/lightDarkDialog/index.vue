@@ -1,8 +1,8 @@
 <template>
-    <div  v-show="show" v-model="currentValue" class="preference-modal">
+    <div  v-show="show" v-model="openValue" class="preference-modal">
         <div class="row">
             <span>夜间模式</span>
-            <i-switch  @on-change="switchChange">
+            <i-switch v-model="switchValue" @on-change="switchChange">
                 <span slot="open">开</span>
                 <span slot="close">关</span>
             </i-switch>
@@ -20,7 +20,9 @@ export default class switchLightDark extends Vue {
     })
     public value!:false;
     private show:Boolean=true
-    private currentValue:Boolean=false
+    private openValue:Boolean=false // 是否显示皮肤切换dialog
+    private switchValue:Boolean=false // 是否为夜间模式
+
     @Watch('value')
     onValueChanged(val: String, oldVal: String) {
         this.show = val
@@ -28,6 +30,7 @@ export default class switchLightDark extends Vue {
     mounted(){
         this.show = this.value;
         const theme_ = this.mStorage.get("theme");
+        this.switchValue = theme_=='night';
         document.getElementById('app').className ='theme_'+theme_;
     }
     switchChange(val:string){
