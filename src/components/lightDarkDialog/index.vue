@@ -1,7 +1,10 @@
 <template>
     <div  v-show="show" v-model="openValue" class="preference-modal">
         <div class="row">
-            <span>夜间模式</span>
+            <span>
+                <Icon size="30" type="ios-moon" />
+                <span style="display:inline-block;padding-left:8px;">夜间模式</span>
+            </span>
             <i-switch v-model="switchValue" @on-change="switchChange">
                 <span slot="open">开</span>
                 <span slot="close">关</span>
@@ -54,19 +57,26 @@ export default class switchLightDark extends Vue {
     position: absolute;
     right:-.5rem;
     top: 1rem;
-    background: @back-light1;
+    background: @back-day;
     min-width: 4rem;
     box-shadow: 0 2px 8px rgba(0,0,0,.1);
     -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,.1));
     z-index: 999;
     padding: .2rem;
     border-radius:.04rem;
+    color:#969696;
     .row{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         font-size: .3rem;
+        i{
+            color:#969696; 
+        }
+        span{
+             color:#969696; 
+        }
     }
     &::before,&::after{
         position: absolute;

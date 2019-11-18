@@ -1,3 +1,9 @@
 .theme_day .ivu-layout {
-  background: red;
+  background: #fff;
+}
+.theme_day .ivu-layout .Layout-Header {
+  border-bottom: 1px solid #f0f0f0;
+}
+.theme_day .ivu-layout .ivu-layout-header {
+  background: #fff !important;
 }

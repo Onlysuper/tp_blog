@@ -1,3 +1,12 @@
 .theme_night .ivu-layout {
-  background: black;
+  background: #3f3f3f;
+}
+.theme_night .ivu-layout .Layout-Header {
+  border-bottom: 1px solid #000;
+}
+.theme_night .ivu-layout .ivu-layout-header {
+  background: #3f3f3f !important;
+}
+.theme_night * {
+  color: #c8c8c8;
 }

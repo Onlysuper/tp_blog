@@ -38,6 +38,7 @@
                 <DropdownItem v-for="(item,index) in menuList" :key="index">{{item.label}}</DropdownItem>
             </DropdownMenu>
         </Dropdown>
+        <button @click="goLogin">登录</button>
         <div class="item m-but">
         <button @click="goWrite">写文章</button>
         </div>
@@ -85,6 +86,10 @@ export default class headerLg extends Vue {
     created(){ 
         this.lightDarkConfig();
     }
+    // 登录
+    goLogin(){
+        
+    }
 }
 </script>
 <style lang="less" scoped>
@@ -95,8 +100,8 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-background: #fff;
-border-bottom: 1px solid #f0f0f0;
+// background: #fff;
+// border-bottom: 1px solid #f0f0f0;
 display: none;
   .layout-logo{
         height: 56px;
@@ -138,9 +143,9 @@ display: none;
 
     .m-menu{
         background: transparent;
-        .ivu-menu-item:not(.ivu-menu-item-active){
-            color:#333;
-        }
+        // .ivu-menu-item:not(.ivu-menu-item-active){
+        //     color:#333;
+        // }
         .ivu-menu-item,.ivu-menu-item-active{
             font-size: 18px;
             border:0;
@@ -202,8 +207,7 @@ display: none;
     align-items: center;
     justify-content: center;
     position: relative;
-    a{
-        @extend .preference;
+    a:extend(.preference){
         flex: 1;
     }
     i{
@@ -215,7 +219,7 @@ display: none;
         position: absolute;
         right:-.5rem;
         top: 1rem;
-        background: @back-light1;
+        background: @back-day;
         min-width: 4rem;
         box-shadow: 0 2px 8px rgba(0,0,0,.1);
         -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,.1));

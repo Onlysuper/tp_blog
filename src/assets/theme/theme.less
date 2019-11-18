@@ -1,6 +1,12 @@
-.theme(@backcolor:red,@fontcolor:green,@butcolor:blue){
+.theme(@backcolor:#3f3f3f,@fontcolor:#c8c8c8,@titlebordercolor:#000,@butcolor:blue){
     .ivu-layout{
         background: @backcolor;
+        .Layout-Header{
+            border-bottom: 1px solid @titlebordercolor
+        }
+        .ivu-layout-header{
+            background: @backcolor !important;
+        }
     }
     // *{
     //     color: @fontcolor;

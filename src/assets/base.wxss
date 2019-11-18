@@ -1,0 +1,18 @@
+body {
+  color: #404040;
+}
+@media screen and (max-width: 576px) {
+  .sm-block {
+    display: flex !important;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .md-block {
+    display: flex !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .lg-block {
+    display: flex !important;
+  }
+}

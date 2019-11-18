@@ -7,8 +7,8 @@ import storage from "./storage/index.ts";
 // import style
 Vue.prototype.mStorage=storage;
 import 'view-design/dist/styles/iview.css';
-import '@src/assets/theme/theme.less';
 import '../my-theme/index.less';
+// import '@src/assets/theme/theme.less';
 
 // import '../my-theme/dist/iview.css';
 
@@ -22,6 +22,7 @@ import '../my-theme/index.less';
 // }
 
 import '../src/assets/theme/night.less';
+import '../src/assets/theme/day.less';
 Vue.config.productionTip = false;
 Vue.use(ViewUI);
 new Vue({
