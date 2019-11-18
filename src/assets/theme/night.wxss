@@ -1,0 +1,3 @@
+.theme_night .ivu-layout {
+  background: red;
+}

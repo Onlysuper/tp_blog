@@ -31,7 +31,7 @@ export default class headerLg extends Vue {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .md-header{
     position: relative;
     display: flex;

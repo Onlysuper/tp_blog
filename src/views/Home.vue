@@ -93,7 +93,7 @@ export default class Home extends Vue  {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .article{
   line-height: 1;
   .list{
@@ -106,7 +106,7 @@ export default class Home extends Vue  {
       flex:1;
       .title{
         margin-top: 8px;
-        color: $m-color1;
+        color: @m-color1;
         font-size: 18px;
         &:hover{
           cursor: pointer;
@@ -115,7 +115,7 @@ export default class Home extends Vue  {
       }
       .abstract{
         margin-top: 8px;
-        color: $m-color1;
+        color: @m-color1;
         font-size: 14px;
         line-height: 1.5;
       }
@@ -124,7 +124,7 @@ export default class Home extends Vue  {
         display: flex;
         flex-direction: row;
         list-style: none;
-        color: $m-color1;
+        color: @m-color1;
         font-size: 12px;
         li{
            list-style: none;
@@ -145,7 +145,7 @@ export default class Home extends Vue  {
   }
 }
 .m-title{
-  border-left: .1rem solid $m-color1;
+  border-left: .1rem solid @m-color1;
   font-weight: bold;
   font-size: .3rem;
   padding-left: .2rem;
@@ -162,7 +162,7 @@ export default class Home extends Vue  {
         font-size: .26rem;
         &.nums{
           font-size: .22rem;
-          color: $m-color1;
+          color: @m-color1;
           margin-top: .1rem;
           line-height: 1;
         }

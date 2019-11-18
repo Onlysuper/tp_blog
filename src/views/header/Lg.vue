@@ -26,17 +26,7 @@
             <a @click="lightDarkChange" href="javascript:void(0)">
                 <Icon type="ios-sunny" />
             </a>
-            <!-- <switchLightDark :open="lightDarkDialog"></switchLightDark> -->
-            <switchLightDark v-model="lightDarkDialog"></switchLightDark>
-            <!-- <div class="preference-modal">
-                   <div class="row">
-                        <span>夜间模式</span>
-                        <i-switch>
-                            <span slot="open">开</span>
-                            <span slot="close">关</span>
-                        </i-switch>
-                   </div>
-            </div> -->
+            <lightDarkDialog v-model="lightDarkDialog"></lightDarkDialog>
     </div>
     <div class="layout-user">
         <div class="item m-avatar">
@@ -56,10 +46,10 @@
 </template>
 <script lang="ts">
 import { Component, Vue, Prop,Emit } from 'vue-property-decorator';
-import switchLightDark from "@src/components/switchLightDark/index.vue";
+import lightDarkDialog from "@src/components/lightDarkDialog/index.vue";
 @Component({
     components:{
-        switchLightDark
+        lightDarkDialog
     }
 })
 export default class headerLg extends Vue {
@@ -87,7 +77,7 @@ export default class headerLg extends Vue {
     }
     lightDarkConfig(){
         document.addEventListener('click',(e)=>{
-            if(!this.$refs.preference.contains(e.target)){
+            if(!this.$refs['preference'].contains(e.target)){
                 this.lightDarkDialog = false;
             }
          })
@@ -97,7 +87,7 @@ export default class headerLg extends Vue {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .lg-header{
 width: 100%;
 position: relative;
@@ -179,7 +169,6 @@ display: none;
         outline: 0;
         width: 4rem;
         &::placeholder{
-            // font-weight: bold;
         }
         &:focus{
             border:0;
@@ -226,7 +215,7 @@ display: none;
         position: absolute;
         right:-.5rem;
         top: 1rem;
-        background: $back-light1;
+        background: @back-light1;
         min-width: 4rem;
         box-shadow: 0 2px 8px rgba(0,0,0,.1);
         -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,.1));

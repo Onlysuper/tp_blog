@@ -1,8 +1,8 @@
 const path = require('path');
 module.exports = {
-  // devServer:{
-  //   port: 8089,
-  // },
+  devServer:{
+    port: 8089,
+  },
  
   configureWebpack:{
     resolve:{
@@ -13,8 +13,8 @@ module.exports = {
   },
   pluginOptions: {
     'style-resources-loader': {
-      preProcessor: 'scss',
-      patterns: [path.resolve(__dirname, 'src/assets/base.scss')]
+      preProcessor: 'less',
+      patterns: [path.resolve(__dirname, 'src/assets/base.less')]
     }
   }
 }

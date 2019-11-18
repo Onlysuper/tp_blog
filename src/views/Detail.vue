@@ -44,7 +44,7 @@
       </div>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 // @import "../assets/base.less";
 .articel-comment{
   .comment-header{
