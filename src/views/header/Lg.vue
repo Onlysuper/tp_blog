@@ -38,7 +38,7 @@
                 <DropdownItem v-for="(item,index) in menuList" :key="index">{{item.label}}</DropdownItem>
             </DropdownMenu>
         </Dropdown>
-        <button @click="goLogin">登录</button>
+        <a class="login-but" @click="goLogin">登录</a>
         <div class="item m-but">
         <button @click="goWrite">写文章</button>
         </div>
@@ -88,7 +88,9 @@ export default class headerLg extends Vue {
     }
     // 登录
     goLogin(){
-        
+        this.$router.push({
+            path:"/sign_in"
+        })
     }
 }
 </script>
@@ -138,6 +140,12 @@ display: none;
           outline: 0;
           cursor: pointer;
         }
+      }
+      .login-but{
+        color: #969696;
+        font-size: 15px;
+        padding:0 .2rem;
+        
       }
     } 
 

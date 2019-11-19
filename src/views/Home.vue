@@ -26,6 +26,7 @@
                 </div>
               </div>
             </div>
+            <bone-list></bone-list>
           </div>
         </Col>
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 12, offset: 0}">
@@ -53,17 +54,20 @@
 </template>
 
 <script lang="ts">
+import boneList from "@src/components/boneStyle/articleList";
 import apis from "@src/apis/index.ts";
-var aa = apis.getAricels({
-  name:"123"
-}).then(res=>{
-  console.log('res',res)
-}).catch(err=>{
-   console.log('err',err)
-})
+// var aa = apis.getAricels({
+//   name:"123"
+// }).then(res=>{
+//   console.log('res',res)
+// }).catch(err=>{
+//    console.log('err',err)
+// })
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
-  components: {}
+  components: {
+    boneList
+  }
 })
 export default class Home extends Vue  {
  articelList : Array<object> = [
