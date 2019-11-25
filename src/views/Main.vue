@@ -11,10 +11,11 @@
                <router-view></router-view>
             </keep-alive>
         </Content>
-        <Footer>
-          <p>xiaOp的博客 © 2019</p>
+        <Footer class="home-footer">
+          <p>laomeng的博客 © 2019</p>
           <p>Powered by Jekyll | Theme H2O</p>
         </Footer>
+     <BackTop></BackTop>
     </Layout>
   </div>
 </template>
@@ -224,5 +225,8 @@ export default class App extends Vue {
         padding: .2rem;
         background: #fff;
       }
+  }
+  .home-footer{
+    text-align: center;
   }
 </style>

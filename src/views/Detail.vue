@@ -14,6 +14,48 @@
 链接：https://www.jianshu.com/p/609255ce98aa
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  <p>iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
+如果您想查看iview-admin的更新动态，您可以到更新日志查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到使用教程查看讲解；如果您想在线体验iview-admin，您可以到在线访问体验。如果你只是想要一个清醒爽朗的界面，那你可以下载简化版模板来做开发。
+
+作者：shikern
+链接：https://www.jianshu.com/p/609255ce98aa
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
             </div>
             <div class="feedback">
               <span class="item">
@@ -32,7 +74,7 @@
                    <div class="inner">
                      <Avatar class="avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
                       <div class="content">
-                          <Input v-model="value6" type="textarea" :rows="4" placeholder="写下你的评论" />
+                          <Input type="textarea" :rows="4" placeholder="写下你的评论" />
                           <div class="operate">
                             <div class="item">
                               <Icon type="ios-happy-outline" />
@@ -102,12 +144,12 @@
               <div class="m-title">
                 推荐阅读
               </div>
-              <ul>
+              <!-- <ul>
                 <li v-for="(item,index) in recommendList" :key="index">
                   <p>{{item.title}}</p>
                   <p class="nums">阅读<span> {{item.readers}}</span></p>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
         </Col>
