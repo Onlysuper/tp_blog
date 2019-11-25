@@ -24,7 +24,7 @@
     
     <div ref="preference" class="preference">
             <a @click="lightDarkChange" href="javascript:void(0)">
-                <Icon type="ios-sunny" />
+                <Icon type="ios-bowtie-outline" />
             </a>
             <lightDarkDialog v-model="lightDarkDialog"></lightDarkDialog>
     </div>

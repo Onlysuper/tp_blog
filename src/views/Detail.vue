@@ -140,17 +140,18 @@
         </Col>
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 8, offset: 0}">
          <div class="right-container">
-            <div class="m-recommend">
-              <div class="m-title">
+           <tagsModule></tagsModule>
+            <!-- <div class="m-recommend"> -->
+              <!-- <div class="m-title">
                 推荐阅读
-              </div>
+              </div> -->
               <!-- <ul>
                 <li v-for="(item,index) in recommendList" :key="index">
                   <p>{{item.title}}</p>
                   <p class="nums">阅读<span> {{item.readers}}</span></p>
                 </li>
               </ul> -->
-            </div>
+            <!-- </div> -->
           </div>
         </Col>
       </Row>
@@ -292,3 +293,15 @@
   }
 }
 </style>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import tagsModule from "@src/components/lmModule/tagsModule.vue";
+@Component({
+  components:{
+    tagsModule
+  }
+})
+export default class HomeDetail extends Vue  {
+  
+}
+</script>

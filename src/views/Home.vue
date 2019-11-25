@@ -30,8 +30,10 @@
         </Col>
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 8, offset: 0}">
          <div class="right-container">
+           <tagsModule></tagsModule>
+           <articelModule></articelModule>
             <!-- 待开发 -->
-            <div class="m-recommend">
+            <!-- <div class="m-recommend">
               <div class="m-title">
                 推荐阅读
               </div>
@@ -41,7 +43,7 @@
                   <p class="nums">阅读<span> {{item.readers}}</span></p>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </Col>
         </Row>
@@ -53,19 +55,16 @@
 </template>
 
 <script lang="ts">
+import tagsModule from "@src/components/lmModule/tagsModule.vue";
+import articelModule from "@src/components/lmModule/articelModule.vue";
 import boneList from "@src/components/boneStyle/articleList";
 import apis from "@src/apis/index.ts";
-// var aa = apis.getAricels({
-//   name:"123"
-// }).then(res=>{
-//   console.log('res',res)
-// }).catch(err=>{
-//    console.log('err',err)
-// })
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
   components: {
-    boneList
+    tagsModule,
+    articelModule,
+    boneList,
   }
 })
 export default class Home extends Vue  {
