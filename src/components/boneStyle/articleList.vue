@@ -10,13 +10,6 @@
      <div class="background-masker four-left"></div>
      <div class="background-masker split-line4"></div>
      <div class="background-masker vertical-line"></div>
-     <!-- <div class="background-masker first-right"></div> -->
-     <!-- <div class="background-masker header-left"></div>
-     <div class="background-masker header-right"></div>
-     <div class="background-masker header-bottom"></div> -->
-     <!-- <div class="background-masker subheader-left"></div>
-     <div class="background-masker subheader-right"></div>
-     <div class="background-masker subheader-bottom"></div> -->
    </div>
 </div>
 </template>

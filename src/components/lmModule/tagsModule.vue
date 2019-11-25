@@ -2,7 +2,7 @@
     <div class="lm-module hot-recommend">
         <h2 class="title">热门标签</h2>
         <div class="content">
-            <Tag color="default">default</Tag>
+            <Tag color="default">default</Tag> 
             <Tag color="primary">primary</Tag>
             <Tag color="success">success</Tag>
             <Tag color="error">error</Tag>
@@ -34,6 +34,6 @@
 </style>
 <script lang="ts">
 import { Component, Vue, Provide } from 'vue-property-decorator';
-export default class tagsModule extends Vue  {
+export default class TagsModule extends Vue  {
 }
 </script>

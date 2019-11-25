@@ -30,8 +30,10 @@
         </Col>
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 8, offset: 0}">
          <div class="right-container">
-           <tagsModule></tagsModule>
-           <articelModule></articelModule>
+           <tags-module></tags-module>
+           <articel-module></articel-module>
+           <!-- <articel-module></articel-module> -->
+           <english-module></english-module>
             <!-- 待开发 -->
             <!-- <div class="m-recommend">
               <div class="m-title">
@@ -57,13 +59,15 @@
 <script lang="ts">
 import tagsModule from "@src/components/lmModule/tagsModule.vue";
 import articelModule from "@src/components/lmModule/articelModule.vue";
-import boneList from "@src/components/boneStyle/articleList";
+import englishModule from "@src/components/lmModule/englishModule.vue";
+import boneList from "@src/components/boneStyle/articleList.vue";
 import apis from "@src/apis/index.ts";
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
   components: {
     tagsModule,
     articelModule,
+    englishModule,
     boneList,
   }
 })

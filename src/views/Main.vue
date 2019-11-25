@@ -214,7 +214,6 @@ export default class App extends Vue {
       max-width: 1200px;
       .left-container{
         flex: 2;
-        background: #fff;
         padding: .2rem;
       }
       .right-container{
@@ -223,7 +222,6 @@ export default class App extends Vue {
         box-sizing: border-box;
         margin-left: .2rem;
         padding: .2rem;
-        background: #fff;
       }
   }
   .home-footer{
