@@ -1,13 +1,12 @@
 <template>
   <div class="home">
     <div class="main-container">
-      <Row style="100%;margin:0 auto">
-        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 12, offset: 0 }">
+      <Row style="margin:0 auto">
+        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 16, offset: 0 }">
          <div class="left-container">
             <div class="article">
               <div class="list" v-for="(item,index) in articelList" :key="index">
                 <div class="text">
-                 
                   <h4 class="title" @click="goDetail(item)">
                     {{item.title}}
                   </h4>
@@ -29,7 +28,7 @@
             <bone-list></bone-list>
           </div>
         </Col>
-        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 12, offset: 0}">
+        <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 8, offset: 0}">
          <div class="right-container">
             <!-- 待开发 -->
             <div class="m-recommend">
@@ -91,7 +90,7 @@ export default class Home extends Vue  {
   
   goDetail(item:any){
     this.$router.push({
-      path:"/detail"
+      path:"/main/detail"
     })
   }
 }

@@ -11,7 +11,10 @@
                <router-view></router-view>
             </keep-alive>
         </Content>
-        <Footer>Footer</Footer>
+        <Footer>
+          <p>xiaOp的博客 © 2019</p>
+          <p>Powered by Jekyll | Theme H2O</p>
+        </Footer>
     </Layout>
   </div>
 </template>
@@ -204,9 +207,10 @@ export default class App extends Vue {
     z-index: 10;
   } 
   .main-container{
-      display: flex;
-      flex-direction: row;
+      // display: flex;
+      // flex-direction: row;
       margin: 0 auto;
+      max-width: 1200px;
       .left-container{
         flex: 2;
         background: #fff;
