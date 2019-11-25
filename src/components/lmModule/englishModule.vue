@@ -13,26 +13,7 @@
         margin-top: .2rem;
     }
 }
-.articel-module{
-    p{
-        margin: 0;
-    }
-    ul{
-        text-decoration: none;
-        list-style: none;
-        li{
-            list-style: none;
-            padding-bottom: .2rem;
-        }
-    }
-    .feed-back{
-        color:#909090;
-        span{
-            padding-right: .2rem;
-            
-        }
-    }
-}
+
 </style>
 <script lang="ts">
 import { Component, Vue, Provide } from 'vue-property-decorator';

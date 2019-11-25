@@ -30,6 +30,7 @@
         </Col>
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 8, offset: 0}">
          <div class="right-container">
+           <adminModule></adminModule>
            <tags-module></tags-module>
            <articel-module></articel-module>
            <!-- <articel-module></articel-module> -->
@@ -58,6 +59,7 @@
 
 <script lang="ts">
 import tagsModule from "@src/components/lmModule/tagsModule.vue";
+import adminModule from "@src/components/lmModule/adminModule.vue";
 import articelModule from "@src/components/lmModule/articelModule.vue";
 import englishModule from "@src/components/lmModule/englishModule.vue";
 import boneList from "@src/components/boneStyle/articleList.vue";
@@ -65,6 +67,7 @@ import apis from "@src/apis/index.ts";
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
   components: {
+    adminModule,
     tagsModule,
     articelModule,
     englishModule,
