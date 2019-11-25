@@ -2,7 +2,7 @@
   <div id="app">
     <Layout>
         <Header :style="{position: 'fixed', width: '100%',background:'#fff'}" class="Layout-Header">
-           <headerLg :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerLg>
+           <headerLg :theme="theme" :menuList="menuList" @menuSelect="menuSelect" @goWrite="goWrite"></headerLg>
            <headerMd :menuList="menuList" @menuSelect="menuSelect"></headerMd>
            <headerSm :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerSm>
         </Header>
@@ -12,7 +12,7 @@
             </keep-alive>
         </Content>
         <Footer class="home-footer">
-          <p>laomeng的博客 © 2019</p>
+          <p>laomeng © 2019</p>
           <p>Powered by Jekyll | Theme H2O</p>
         </Footer>
      <BackTop></BackTop>

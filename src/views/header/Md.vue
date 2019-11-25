@@ -7,7 +7,8 @@
         </div>
         <Dropdown @on-click="menuSelect">
             <a href="javascript:void(0)">
-                <Icon size="25" type="ios-menu" />
+                展开
+                <!-- <Icon size="25" type="ios-menu" /> -->
             </a>
             <DropdownMenu slot="list">
                 <DropdownItem v-for="(item,index) in menuList" :key="index"  :name="item.path">{{item.label}}</DropdownItem>

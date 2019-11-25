@@ -2,8 +2,9 @@
  <!-- 小屏幕 -->
     <div class="sm-header sm-block">
         <div class="sm-top" @click="smMenuVisible = true">
-            <Icon size="26" type="ios-menu" />
-            <Drawer title="Basic Drawer" placement="left" :closable="false" v-model="smMenuVisible">
+             展开
+            <!-- <Icon size="26" type="ios-menu" /> -->
+            <Drawer title="一只老萌" placement="left" :closable="false" v-model="smMenuVisible">
                 <Menu class="m-menu" mode="vertical" :theme="theme" :active-name="menuList[0].path" @on-select="menuSelect">
                     <MenuItem v-for="(item,index) in menuList" :key="index" :name="item.path">
                         {{item.label}}

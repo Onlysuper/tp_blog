@@ -69,7 +69,7 @@ export default class headerLg extends Vue {
     menuSelect(item:any) {
         return item
     }
-    @Emit('menuSelect')
+    @Emit('goWrite')
     goWrite(item:any) {
         return item
     }
