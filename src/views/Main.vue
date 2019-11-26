@@ -6,7 +6,8 @@
            <headerMd :menuList="menuList" @menuSelect="menuSelect"></headerMd>
            <headerSm :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerSm>
         </Header>
-        <Content :style="{margin: '88px 20px 0', minHeight: '500px'}">
+        <!-- <Content :style="{margin: '88px 20px 0', minHeight: '500px'}"> -->
+        <Content :style="{margin: '70px 20px 0', minHeight: '500px'}">
             <keep-alive>
                <router-view></router-view>
             </keep-alive>
@@ -46,14 +47,19 @@ export default class App extends Vue {
             index:'/',
           },
           {
-            label:"关注",
+            label:"关于",
              path:"/main/about",
             index:'list',
           },
           {  
-            label:"信息",
+            label:"文章",
              path:"/main/articel",
             index:'articel'
+          },
+          {  
+            label:"技术",
+             path:"/main/technology",
+            index:'technology'
           }
         ]
     // }
