@@ -7,7 +7,7 @@
            <headerSm :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerSm>
         </Header>
         <!-- <Content :style="{margin: '88px 20px 0', minHeight: '500px'}"> -->
-        <Content :style="{margin: '70px 20px 0', minHeight: '500px'}">
+        <Content :style="{margin: '70px .3rem 0', minHeight: '500px'}">
             <keep-alive>
                <router-view></router-view>
             </keep-alive>
@@ -232,5 +232,8 @@ export default class App extends Vue {
   }
   .home-footer{
     text-align: center;
+  }
+  .ivu-layout-header{
+    padding: 0 .3rem
   }
 </style>
