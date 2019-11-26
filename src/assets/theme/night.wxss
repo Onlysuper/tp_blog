@@ -6,21 +6,24 @@
   /*底部背景颜色*/
   background: #3f3f3f;
 }
-.theme_night .background-masker {
-  background: #3f3f3f;
-}
 .theme_night .primary-color {
   color: #c8c8c8;
 }
-.animated-background {
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-name: placeHolderShimmer;
-  animation-timing-function: linear;
-  background: #f6f7f8;
-  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-  background-size: 800px 104px;
-  height: 100px;
-  position: relative;
+.theme_night .bs-bottom-border {
+  border-bottom: 1px solid #666;
+}
+.theme_night .bs-input-back {
+  background: #4f4f4f;
+}
+.theme_night .bs-title {
+  color: #969696 !important;
+}
+.theme_night .bs-text {
+  color: #999;
+}
+.theme_night .ivu-select-dropdown {
+  background: #3f3f3f;
+}
+.theme_night .bs-linear-gradient {
+  background: linear-gradient(to right, #969696 8%, #4f4f4f 18%, #666 33%);
 }

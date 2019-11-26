@@ -124,7 +124,6 @@ export default class Home extends Vue  {
   .list{
     display: flex; 
     flex-direction: row;
-    border-bottom: 1px solid #f0f0f0;
     padding-top: 15px;
     padding-bottom: 20px;
     .text{

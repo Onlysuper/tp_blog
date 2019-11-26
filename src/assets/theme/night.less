@@ -1,19 +1,14 @@
 @import url('./theme.less');
 .theme_night{
     .theme(
-        #3f3f3f,
-        #3f3f3f,
-        #c8c8c8)
-}
-.animated-background {
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: placeHolderShimmer;
-    animation-timing-function: linear;
-    background: #f6f7f8;
-    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
-    background-size: 800px 104px;
-    height: 100px;
-    position: relative;
+        #3f3f3f, // 模块背景颜色
+        #3f3f3f, // 底层背景颜色
+        #666, // 底部线颜色
+        #4f4f4f,//输入框背景颜色
+        #969696,// 标题文字颜色
+        #999 // 一般文字颜色
+    );
+    .bs-linear-gradient{
+        background: linear-gradient(to right, #969696 8%, #4f4f4f 18%, #666 33%);
+    }
 }

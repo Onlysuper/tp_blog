@@ -1,10 +1,11 @@
 .theme(
-@backcolor:#3f3f3f,
-@basebackcolor:#3f3f3f,
-@fontcolor:#c8c8c8,
-@titlebordercolor:#000,
-@backcolor2:#a5a5a5,
-@butcolor:blue
+@backcolor:#3f3f3f, // 一般背景颜色
+@basebackcolor:#3f3f3f,//底层背景颜色
+@bordercolor:#fff,  // 线颜色
+@inputback:#fff, // 输入框背景颜色
+@titlecolor:#fff,// 标题文字颜色
+@textcolor:#fff,// 普通文字颜色
+@fontcolor:#c8c8c8
 ){
     .primary-back{
         /*模块背景颜色*/
@@ -14,12 +15,27 @@
         /*底部背景颜色*/
         background: @basebackcolor;
     }
-    .background-masker{
-        background: @backcolor;
-    }
+   
     .primary-color{
         color:@fontcolor
     }
+    .bs-bottom-border{
+        border-bottom: 1px solid @bordercolor;
+    }
+    .bs-input-back{
+        background: @inputback;
+    }
+    .bs-title{
+        color:@titlecolor !important
+    }
+    .bs-text{
+        color:@textcolor
+    }
+    .ivu-select-dropdown{
+        background: @backcolor;
+    }
+    
+    
 
     
 }

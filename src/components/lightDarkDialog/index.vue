@@ -1,5 +1,5 @@
 <template>
-    <div  v-show="show" v-model="openValue" class="preference-modal">
+    <div  v-show="show" v-model="openValue" class="preference-modal primary-back">
         <div class="row">
             <span>
                 <Icon size="30" type="ios-moon" />
@@ -90,6 +90,12 @@ export default class switchLightDark extends Vue {
     &::after{
         top: -9px;
         border-bottom: 9px solid #fff;
+    }
+}
+.theme_night .preference-modal{
+    &::after{
+        top: -9px;
+        border-bottom: 9px solid #3f3f3f,
     }
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <Layout>
-        <Header :style="{position: 'fixed', width: '100%',background:'#fff'}" class="Layout-Header">
-           <headerLg :theme="theme" :menuList="menuList" @menuSelect="menuSelect" @goWrite="goWrite"></headerLg>
+    <Layout class="base-back">
+        <Header :style="{position: 'fixed', width: '100%'}" class="Layout-Header primary-back bs-bottom-border">
+           <headerLg :theme="theme" :activeMenuPath="activeMenuPath" :menuList="menuList" @menuSelect="menuSelect" @goWrite="goWrite"></headerLg>
            <headerMd :menuList="menuList" @menuSelect="menuSelect"></headerMd>
            <headerSm :theme="theme" :menuList="menuList" @menuSelect="menuSelect"></headerSm>
         </Header>
         <!-- <Content :style="{margin: '88px 20px 0', minHeight: '500px'}"> -->
-        <Content :style="{margin: '70px .3rem 0', minHeight: '500px'}">
+        <Content class="Layout-content">
             <keep-alive>
                <router-view></router-view>
             </keep-alive>
@@ -37,9 +37,9 @@ import headerSm from "@src/views/header/Sm.vue";
 })
 
 export default class App extends Vue {
-  // data(){
-  //   return {
+
     private  theme:string= 'light';
+    private  activeMenuPath:string= '/home';
     private  menuList:Array<any>=[
           {
             label:"首页",
@@ -62,12 +62,13 @@ export default class App extends Vue {
             index:'technology'
           }
         ]
-    // }
-  // }
+
   private menuSelect(item:any){
-   this.$router.push({
-     path:item
-   })
+    this.activeMenuPath = item;
+    console.log('activeMenuPath',this.activeMenuPath);
+    this.$router.push({
+      path:item
+    })
   }
   private goWrite(){
     this.$router.push({
@@ -209,10 +210,13 @@ export default class App extends Vue {
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    border-bottom: 1px solid #f0f0f0;
     background: #fff;
     z-index: 10;
   } 
+  .Layout-content{
+    margin: 70px .3rem 0;
+    min-height: 500px
+  }
   .main-container{
       // display: flex;
       // flex-direction: row;
@@ -240,4 +244,22 @@ export default class App extends Vue {
       height: 1.6rem;
       line-height: 1.6rem;
   }
+@media screen and (max-width: 576px) {
+    .Layout-Header{
+    }
+}
+@media screen and (min-width: 576px) and(max-width: 992px){
+    .Layout-Header{
+    }
+}
+@media screen and (min-width: 992px) {
+    .Layout-Header{
+      height: 88px;
+      line-height: 88px;
+    }
+    .Layout-content{
+      margin: 88px 20px 0;
+      min-height: 500px
+    }
+}
 </style>

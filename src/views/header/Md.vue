@@ -1,6 +1,6 @@
 <template>
  <!-- 中屏幕 -->
-  <div class="md-header md-block">
+  <div class="primary-back md-header md-block">
     <div class="md-top">
         <div class="layout-logo">
             <img src="../../assets/logo.png">
@@ -16,6 +16,7 @@
         </Dropdown>
     </div>
   </div>
+  
 </template>
 <script lang="ts">
 import { Component, Vue,Prop } from 'vue-property-decorator';
@@ -40,7 +41,6 @@ export default class headerLg extends Vue {
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    border-bottom: 1px solid #f0f0f0;
     display: none;
     width: 100%;
     .md-top{

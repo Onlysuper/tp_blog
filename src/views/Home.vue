@@ -5,7 +5,7 @@
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 16, offset: 0 }">
          <div class="left-container">
             <div class="article primary-back">
-              <div class="list" v-for="(item,index) in articelList" :key="index">
+              <div class="list bs-bottom-border" v-for="(item,index) in articelList" :key="index">
                 <div class="text">
                   <h4 class="title" @click="goDetail(item)">
                     {{item.title}}
@@ -93,7 +93,6 @@ export default class Home extends Vue  {
   .list{
     display: flex; 
     flex-direction: row;
-    border-bottom: 1px solid #f0f0f0;
     padding-top: 15px;
     padding-bottom: 20px;
     .text{

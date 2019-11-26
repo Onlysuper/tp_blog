@@ -52,7 +52,6 @@ export default class headerLg extends Vue {
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    border-bottom: 1px solid #f0f0f0;
     display: none;
     width: 100%;
     .sm-top{
@@ -83,7 +82,6 @@ export default class headerLg extends Vue {
         font-size: .26rem;
         border: 1px solid #eee;
         border-radius: .4rem;
-        background: #eee;
         transition: width .5s;
         padding-left: .2rem;
         border: 0;

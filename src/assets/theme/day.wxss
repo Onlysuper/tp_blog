@@ -6,9 +6,24 @@
   /*底部背景颜色*/
   background: #fff;
 }
-.theme_day .background-masker {
+.theme_day .primary-color {
+  color: #c8c8c8;
+}
+.theme_day .bs-bottom-border {
+  border-bottom: 1px solid #666;
+}
+.theme_day .bs-input-back {
+  background: #4f4f4f;
+}
+.theme_day .bs-title {
+  color: #969696 !important;
+}
+.theme_day .bs-text {
+  color: #999;
+}
+.theme_day .ivu-select-dropdown {
   background: #fff;
 }
-.theme_day .primary-color {
-  color: #333;
+.theme_day .bs-linear-gradient {
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
 }

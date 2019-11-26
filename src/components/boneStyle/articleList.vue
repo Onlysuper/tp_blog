@@ -1,15 +1,15 @@
 <template>
 <div class="timeline-item">
-   <div class="animated-background">
-     <div class="background-masker first-left"></div>
-     <div class="background-masker split-line1"></div>
-     <div class="background-masker second-left"></div>
-     <div class="background-masker split-line2"></div>
-     <div class="background-masker third-left"></div>
-     <div class="background-masker split-line3"></div>
-     <div class="background-masker four-left"></div>
-     <div class="background-masker split-line4"></div>
-     <div class="background-masker vertical-line"></div>
+   <div class="animated-background bs-input-back bs-linear-gradient">
+     <div class="background-masker primary-back first-left"></div>
+     <div class="background-masker primary-back split-line1"></div>
+     <div class="background-masker primary-back second-left"></div>
+     <div class="background-masker primary-back split-line2"></div>
+     <div class="background-masker primary-back third-left"></div>
+     <div class="background-masker primary-back split-line3"></div>
+     <div class="background-masker primary-back four-left"></div>
+     <div class="background-masker primary-back split-line4"></div>
+     <div class="background-masker primary-back vertical-line"></div>
    </div>
 </div>
 </template>
@@ -34,8 +34,7 @@
     animation-iteration-count: infinite;
     animation-name: placeHolderShimmer;
     animation-timing-function: linear;
-    background: #f6f7f8;
-    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    /* background: #f6f7f8; */
     background-size: 800px 104px;
     height: 100px;
     position: relative;
@@ -43,7 +42,6 @@
 
 
 .background-masker {
-    background: #fff;
     position: absolute;
 }
 

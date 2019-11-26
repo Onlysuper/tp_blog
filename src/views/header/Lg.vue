@@ -1,49 +1,51 @@
 <template>
  <!-- 大屏幕 -->
- <div class="lg-header lg-block">
-    <div class="header-left lg-top">
-        <div class="layout-logo">
-            <img src="../../assets/logo.png">
+    <div class="lg-header lg-block">
+        <div class="header-left lg-top">
+            <div class="layout-logo">
+                <img src="../../assets/logo.png">
+            </div>
+            <div class="layout-nav">
+                <Menu class="m-menu" mode="horizontal" :theme="theme" :active-name="activeMenuPath" @on-select="menuSelect">
+                    <MenuItem :class="item.path==activeMenuPath?'':'bs-title'" v-for="(item,index) in menuList" :key="index" :name="item.path">
+                        {{item.label}}
+                    </MenuItem>
+                </Menu>
+            </div>
+            <div class="layout-search">
+                <form class="search-form">
+                    <input class="search-input bs-input-back" type="text" name="" id="" autocomplete="off" placeholder="搜索" >
+                    <a class="search-btn" href="javascript:void(null)">
+                        <Icon type="ios-search" />
+                    </a>
+                </form>
+            </div>
         </div>
-        <div class="layout-nav">
-            <Menu class="m-menu" mode="horizontal" :theme="theme" :active-name="menuList[0].path" @on-select="menuSelect">
-                <MenuItem v-for="(item,index) in menuList" :key="index" :name="item.path">
-                    {{item.label}}
-                </MenuItem>
-            </Menu>
-        </div>
-        <div class="layout-search">
-            <form class="search-form">
-                <input type="text" name="" id="" autocomplete="off" placeholder="搜索" class="search-input">
-                <a class="search-btn" href="javascript:void(null)">
-                    <Icon type="ios-search" />
+        
+        <div ref="preference" class="preference">
+                <a @click="lightDarkChange" href="javascript:void(0)">
+                    <Icon type="ios-bowtie-outline" />
                 </a>
-            </form>
+                <lightDarkDialog v-model="lightDarkDialog"></lightDarkDialog>
+        </div>
+        <div class="layout-user">
+            <div class="item m-avatar">
+            <Avatar size="large"  src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+            </div>
+            <Dropdown class="arrow-box primary-back">
+                <Icon size="22" color="#969696" type="md-arrow-dropdown" />
+                <DropdownMenu class="primary-back" slot="list">
+                    <DropdownItem class="bs-title" v-for="(item,index) in menuList" :key="index">
+                        {{item.label}}
+                    </DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+            <a class="login-but bs-title" @click="goLogin">登录</a>
+            <div class="item m-but">
+            <button @click="goWrite">写文章</button>
+            </div>
         </div>
     </div>
-    
-    <div ref="preference" class="preference">
-            <a @click="lightDarkChange" href="javascript:void(0)">
-                <Icon type="ios-bowtie-outline" />
-            </a>
-            <lightDarkDialog v-model="lightDarkDialog"></lightDarkDialog>
-    </div>
-    <div class="layout-user">
-        <div class="item m-avatar">
-        <Avatar size="large"  src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
-        </div>
-        <Dropdown class="arrow-box">
-            <Icon size="22" color="#969696" type="md-arrow-dropdown" />
-            <DropdownMenu slot="list">
-                <DropdownItem v-for="(item,index) in menuList" :key="index">{{item.label}}</DropdownItem>
-            </DropdownMenu>
-        </Dropdown>
-        <a class="login-but" @click="goLogin">登录</a>
-        <div class="item m-but">
-        <button @click="goWrite">写文章</button>
-        </div>
-    </div>
-</div>
 </template>
 <script lang="ts">
 import { Component, Vue, Prop,Emit } from 'vue-property-decorator';
@@ -59,8 +61,12 @@ export default class headerLg extends Vue {
         default:[]
     })
     public menuList!:[];
+
     @Prop({default:'light'})
     theme: any
+
+    @Prop({default:''})
+    activeMenuPath: any
 
     lightDarkDialog = false; // 皮肤选择模块
     switch1:Boolean=true
@@ -85,6 +91,7 @@ export default class headerLg extends Vue {
     }
     created(){ 
         this.lightDarkConfig();
+        console.log(this.menuList);
     }
     // 登录
     goLogin(){
@@ -95,6 +102,7 @@ export default class headerLg extends Vue {
 }
 </script>
 <style lang="less" scoped>
+ 
 .lg-header{
 width: 100%;
 position: relative;
@@ -103,8 +111,6 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 height: 100%;
-// background: #fff;
-// border-bottom: 1px solid #f0f0f0;
 display: none;
   .layout-logo{
         height: 100%;
@@ -147,10 +153,8 @@ display: none;
         }
       }
       .login-but{
-        color: #969696;
         font-size: 15px;
         padding:0 .2rem;
-        
       }
     } 
 
@@ -181,7 +185,6 @@ display: none;
         font-size: .26rem;
         border: 1px solid #eee;
         border-radius: .4rem;
-        background: #eee;
         transition: width .5s;
         padding-left: .2rem;
         border: 0;
@@ -228,39 +231,7 @@ display: none;
         font-size: .8rem;
         color: #969696;
     }
-    .preference-modal{
-        box-sizing: border-box;
-        position: absolute;
-        right:-.5rem;
-        top: 1rem;
-        background: @back-day;
-        min-width: 4rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,.1);
-        -webkit-filter: drop-shadow(0 0 8px rgba(0,0,0,.1));
-        z-index: 999;
-        padding: .2rem;
-        border-radius:.04rem;
-        .row{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            font-size: .3rem;
-        }
-        &::before,&::after{
-            position: absolute;
-            top: -10px;
-            left: 78%;
-            content: "";
-            display: inline-block;
-            border: 9px solid transparent;
-            border-top: none;
-        }
-        &::after{
-            top: -9px;
-            border-bottom: 9px solid #fff;
-        }
-    }
+    
 }
 .layout-nav{
 .ivu-menu-item{
