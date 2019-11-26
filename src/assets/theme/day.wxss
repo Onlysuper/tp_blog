@@ -10,13 +10,13 @@
   color: #c8c8c8;
 }
 .theme_day .bs-bottom-border {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #f0f0f0;
 }
 .theme_day .bs-input-back {
-  background: #4f4f4f;
+  background: #eee;
 }
 .theme_day .bs-title {
-  color: #969696 !important;
+  color: #333 !important;
 }
 .theme_day .bs-text {
   color: #999;

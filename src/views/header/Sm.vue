@@ -13,7 +13,7 @@
             </Drawer>
         </div>
         <form class="search-form">
-            <input type="text" name="" id="" autocomplete="off" placeholder="搜索" class="search-input">
+            <input class="search-input bs-input-back" type="text" name="" id="" autocomplete="off" placeholder="搜索" >
             <a class="search-btn" href="javascript:void(null)">
                 <Icon type="ios-search" />
             </a>

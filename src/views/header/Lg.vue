@@ -30,9 +30,9 @@
         </div>
         <div class="layout-user">
             <div class="item m-avatar">
-            <Avatar size="large"  src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+                <Avatar size="large"  src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
             </div>
-            <Dropdown class="arrow-box primary-back">
+            <Dropdown style="margin-bottom:1px" class="arrow-box primary-back">
                 <Icon size="22" color="#969696" type="md-arrow-dropdown" />
                 <DropdownMenu class="primary-back" slot="list">
                     <DropdownItem class="bs-title" v-for="(item,index) in menuList" :key="index">
