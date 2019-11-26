@@ -1,30 +1,10 @@
 <template>
-  <div class="home">
+  <div class="home bs-text">
     <div class="main-container">
       <Row style="margin:0 auto">
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 16, offset: 0 }">
          <div class="left-container">
-            <div class="article primary-back">
-              <div class="list bs-bottom-border" v-for="(item,index) in articelList" :key="index">
-                <div class="text">
-                  <h4 class="title" @click="goDetail(item)">
-                    {{item.title}}
-                  </h4>
-                  <p class="abstract">
-                    {{item.abstract}}
-                  </p>
-                  <ul class="meta">
-                    <li> {{item.writer}}</li>
-                    <li> {{item.subscribe}}</li>
-                    <li>{{item.readers}}</li>
-                    <li>{{item.comments}}</li>
-                  </ul>
-                </div>
-                <div class="pic">
-                  <img class="img-blur-done" src="https://upload-images.jianshu.io/upload_images/18529255-16f0b301ab42b644?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240" alt="120">
-                </div>
-              </div>
-            </div>
+            <articelList :list="articelList" @goDetail="goDetail"></articelList>
             <bone-list></bone-list>
           </div>
         </Col>
@@ -43,6 +23,7 @@
 </template>
 
 <script lang="ts">
+import articelList from "@src/components/lmArticelList/index.vue";
 import tagsModule from "@src/components/lmModule/tagsModule.vue";
 import adminModule from "@src/components/lmModule/adminModule.vue";
 import articelModule from "@src/components/lmModule/articelModule.vue";
@@ -52,6 +33,7 @@ import apis from "@src/apis/index.ts";
 import { Component, Vue, Provide } from 'vue-property-decorator';
 @Component({
   components: {
+    articelList,// 文章列表
     adminModule,
     tagsModule,
     articelModule,
@@ -88,57 +70,8 @@ export default class Home extends Vue  {
 </script>
 
 <style lang="less" scoped>
-.article{
-  line-height: 1;
-  .list{
-    display: flex; 
-    flex-direction: row;
-    padding-top: 15px;
-    padding-bottom: 20px;
-    .text{
-      flex:1;
-      .title{
-        margin-top: 8px;
-        color: @m-color1;
-        font-size: 18px;
-        &:hover{
-          cursor: pointer;
-          text-decoration: underline;
-        }
-      }
-      .abstract{
-        margin-top: 8px;
-        color: @m-color1;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      ul.meta{
-        margin-top: 8px;
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        color: @m-color1;
-        font-size: 12px;
-        li{
-           list-style: none;
-           margin-left: 10px;
-        }
-      }
-    }
-    .pic{
-      width: 100px;
-      height: 100px;
-      .img-blur-done{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-      }
-    }
-  }
-}
+
 .m-title{
-  border-left: .1rem solid @m-color1;
   font-weight: bold;
   font-size: .3rem;
   padding-left: .2rem;
@@ -155,7 +88,6 @@ export default class Home extends Vue  {
         font-size: .26rem;
         &.nums{
           font-size: .22rem;
-          color: @m-color1;
           margin-top: .1rem;
           line-height: 1;
         }

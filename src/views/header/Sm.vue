@@ -13,7 +13,7 @@
             </Drawer>
         </div>
         <form class="search-form">
-            <input class="search-input bs-input-back" type="text" name="" id="" autocomplete="off" placeholder="搜索" >
+            <input class="search-input bs-input-back" type="text" name="" id="" autocomplete="off" placeholder="请输入关键字" >
             <a class="search-btn" href="javascript:void(null)">
                 <Icon type="ios-search" />
             </a>
@@ -87,7 +87,9 @@ export default class headerLg extends Vue {
         border: 0;
         outline: 0;
         width: 64%;
+        font-size:.36rem;
         &::placeholder{
+             font-size:.36rem;
         }
         &:focus{
             border:0;
@@ -115,6 +117,9 @@ export default class headerLg extends Vue {
        align-items: center;
        justify-content: center;
        border-radius: 100%;
+       i{
+           font-size: .5rem
+       }
     }
 }
 </style>
