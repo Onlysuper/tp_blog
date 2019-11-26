@@ -4,7 +4,7 @@
       <Row style="margin:0 auto">
         <Col :xs="{ span: 24, offset: 0 }" :lg="{ span: 16, offset: 0 }">
          <div class="left-container">
-            <div class="article">
+            <div class="article primary-back">
               <div class="list" v-for="(item,index) in articelList" :key="index">
                 <div class="text">
                   <h4 class="title" @click="goDetail(item)">
@@ -33,25 +33,10 @@
            <adminModule></adminModule>
            <tags-module></tags-module>
            <articel-module></articel-module>
-           <!-- <articel-module></articel-module> -->
            <english-module></english-module>
-            <!-- 待开发 -->
-            <!-- <div class="m-recommend">
-              <div class="m-title">
-                推荐阅读
-              </div>
-              <ul>
-                <li v-for="(item,index) in recommendList" :key="index">
-                  <p>{{item.title}}</p>
-                  <p class="nums">阅读<span> {{item.readers}}</span></p>
-                </li>
-              </ul>
-            </div> -->
           </div>
         </Col>
         </Row>
-     
-     
     </div>
    
   </div>

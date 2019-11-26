@@ -1,19 +1,25 @@
-.theme(@backcolor:#3f3f3f,@fontcolor:#c8c8c8,@titlebordercolor:#000,@backcolor2:#a5a5a5,@butcolor:blue){
-    .ivu-layout{
+.theme(
+@backcolor:#3f3f3f,
+@basebackcolor:#3f3f3f,
+@fontcolor:#c8c8c8,
+@titlebordercolor:#000,
+@backcolor2:#a5a5a5,
+@butcolor:blue
+){
+    .primary-back{
+        /*模块背景颜色*/
         background: @backcolor;
-        .Layout-Header{
-            border-bottom: 1px solid @titlebordercolor
-        }
-        .ivu-layout-header{
-            background: @backcolor !important;
-        }
+    }
+    .base-back{
+        /*底部背景颜色*/
+        background: @basebackcolor;
     }
     .background-masker{
-        background: @backcolor !important;
+        background: @backcolor;
+    }
+    .primary-color{
+        color:@fontcolor
     }
 
     
-    // *{
-    //     color: @fontcolor;
-    // }
 }

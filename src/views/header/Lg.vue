@@ -102,13 +102,18 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
+height: 100%;
 // background: #fff;
 // border-bottom: 1px solid #f0f0f0;
 display: none;
   .layout-logo{
-        height: 56px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img{
-          height: 100%;
+             height: 56px;
+             display: block;
         }
     }
     .header-left{
@@ -150,6 +155,7 @@ display: none;
     } 
 
     .m-menu{
+        height: 100%;
         background: transparent;
         // .ivu-menu-item:not(.ivu-menu-item-active){
         //     color:#333;
@@ -256,4 +262,12 @@ display: none;
         }
     }
 }
+.layout-nav{
+.ivu-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+}
+
 </style>

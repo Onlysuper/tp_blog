@@ -236,4 +236,8 @@ export default class App extends Vue {
   .ivu-layout-header{
     padding: 0 .3rem
   }
+  .ivu-layout-header{
+      height: 1.6rem;
+      line-height: 1.6rem;
+  }
 </style>

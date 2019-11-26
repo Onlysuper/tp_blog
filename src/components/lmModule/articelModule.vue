@@ -1,5 +1,5 @@
 <template>
-    <div class="lm-module articel-module">
+    <div class="primary-back lm-module articel-module">
         <h2 class="title">热门文章</h2>
         <div class="content">
             <ul >

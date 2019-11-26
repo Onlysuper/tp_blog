@@ -1,5 +1,5 @@
 <template>
-    <div class="lm-module admin-module">
+    <div class="primary-back lm-module admin-module">
         <Avatar  class="avatar" size="large" src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
         <h2 class="title">悠悠</h2>
         <div class="content">

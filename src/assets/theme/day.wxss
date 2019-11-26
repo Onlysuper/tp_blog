@@ -1,9 +1,14 @@
-.theme_day .ivu-layout {
+.theme_day .primary-back {
+  /*模块背景颜色*/
   background: #fff;
 }
-.theme_day .ivu-layout .Layout-Header {
-  border-bottom: 1px solid #f0f0f0;
+.theme_day .base-back {
+  /*底部背景颜色*/
+  background: #fff;
 }
-.theme_day .ivu-layout .ivu-layout-header {
-  background: #fff !important;
+.theme_day .background-masker {
+  background: #fff;
+}
+.theme_day .primary-color {
+  color: #333;
 }

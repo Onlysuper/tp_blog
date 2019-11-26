@@ -1,7 +1,7 @@
 <template>
  <!-- 小屏幕 -->
     <div class="sm-header sm-block">
-        <div class="sm-top" @click="smMenuVisible = true">
+        <div style="flex:0 0 .2rem" class="sm-top" @click="smMenuVisible = true">
              <Icon type="ios-menu" />
             <!-- <Icon size="26" type="ios-menu" /> -->
             <Drawer title="一只老萌" placement="left" :closable="false" v-model="smMenuVisible">
@@ -18,7 +18,7 @@
                 <Icon type="ios-search" />
             </a>
         </form>
-        <div></div>
+        <div style="flex:0 0 0"></div>
     </div>
 </template>
 <script lang="ts">
@@ -46,6 +46,7 @@ export default class headerLg extends Vue {
 </script>
 <style lang="less" scoped>
 .sm-header{
+    height: 100%;
     position: relative;
     flex-direction: row;
     justify-content: space-between;
@@ -59,20 +60,26 @@ export default class headerLg extends Vue {
         height: 100%;
         text-align: center;
         padding-left: .2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i{
+            font-size: 1rem
+        }
     }
 }
 .search-form{
     position: relative;
-    // display: flex;
     overflow: hidden;
-     height: .8rem;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-      border-radius: .4rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    flex: 1;
     input{
-        height: .8rem;
-        line-height: .8rem;
+        height: 1rem;
+        line-height: 1rem;
         font-size: .26rem;
         border: 1px solid #eee;
         border-radius: .4rem;
@@ -81,30 +88,31 @@ export default class headerLg extends Vue {
         padding-left: .2rem;
         border: 0;
         outline: 0;
-        width: 4rem;
+        width: 64%;
         &::placeholder{
         }
         &:focus{
             border:0;
             outline: 0;
-            width: 5rem;
+            width: 84%;
             &+a{
                 background: #888;
                 color: #fff !important;
+                 right: 10%;
             }
         }
     }
     a.search-btn{
+       transition: all .5s;
        color: #969696!important;
        font-size: .3rem;
        position:absolute;
-       right: 0;
+       right: 20%;
        top: 50%;
        height: .6rem;
        width: .6rem;
     //    margin-top: -.25rem;
        transform: translateY(-55%);
-       right: .1rem;
        display: flex;
        align-items: center;
        justify-content: center;

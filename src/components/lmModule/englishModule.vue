@@ -1,5 +1,5 @@
 <template>
-    <div class="lm-module english-module">
+    <div class="primary-back lm-module english-module">
         <h2 class="title">daily english</h2>
         <div class="content">
            Don't comment anyone you don't reaily know.

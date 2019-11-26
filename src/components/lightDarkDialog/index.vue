@@ -5,7 +5,7 @@
                 <Icon size="30" type="ios-moon" />
                 <span style="display:inline-block;padding-left:8px;">夜间模式</span>
             </span>
-            <i-switch :disabled="true" v-model="switchValue" @on-change="switchChange">
+            <i-switch v-model="switchValue" @on-change="switchChange">
                 <span slot="open">开</span>
                 <span slot="close">关</span>
             </i-switch>

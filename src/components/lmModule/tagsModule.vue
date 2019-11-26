@@ -1,5 +1,5 @@
 <template>
-    <div class="lm-module hot-recommend">
+    <div class="primary-back lm-module hot-recommend">
         <h2 class="title">热门标签</h2>
         <div class="content">
             <Tag color="default">default</Tag> 
