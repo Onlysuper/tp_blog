@@ -14,7 +14,7 @@
     "highlight.js": "^9.16.2",
     "iview-editor": "^1.1.1",
     "marked": "^0.7.0",
-    "qs": "^6.9.1",
+    "qs": "^6.7.3",
     "sass-resources-loader": "^2.0.1",
     "view-design": "^4.0.2",
     "vue": "^2.6.10",
